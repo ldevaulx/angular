@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr" ng-app="demoApp">
+	<head>
+		<meta charset="UTF-8">
+		<title>Ma première page</title>
+	</head>
+<body  width="500px">
+<div ng-controller="SimpleController">
+
+Client : <input type="text" ng-model="clientname"> {{clientname}}
+Wifi : <input type="checkbox" ng-model="wifi"> 
+<select class="form-control" ng-model="selectCountry" ng-options="country.name for country in countries">
+</select>
+{{selectCountry}}
+<div class="table-responsive">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+			  <th><button ng-click="sort('name')">Nom</button></th>
+			  <th><button ng-click="sort('brand')">Marque</button></th>
+			  <th><button ng-click="sort('country')">Pays</button></th>
+			  <th><button ng-click="sort('wifi')">Wifi</button></th>
+			  <th><button ng-click="sort('webcorner')">Webcorner</button></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="client in clients |orderBy:sorted:order[sorted]">
+				<td>{{client.name}}</td>
+				<td>{{client.brand}}</td>
+				<td>{{client.country}}</td>
+				<td>{{client.wifi}}</td>
+				<td>{{client.webcorner}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+
+<script src="angular.min.js"></script>
+<script src="app.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+</body>
+</html>

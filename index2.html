@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="fr" ng-app="demoApp">
+	<head>
+		<meta charset="UTF-8">
+		<title>Ma première page</title>
+	</head>
+<body>
+<div ng-controller="SimpleController">
+	<ul>
+		<li ng-repeat="user in users ">{{user.name}}</li>
+	</ul>
+	<button class="btn btn-success" ng-click="addUser()"
+</div>
+
+<script src="angular.min.js"></script>
+<script src="app.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+</body>
+</html>
